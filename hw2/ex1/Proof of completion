@@ -1,0 +1,195 @@
+Last login: Mon Sep 18 18:55:20 on ttys002
+shreysamdani@Shreys-MacBook-Pro contracts (master) $ truffle console
+truffle(development)> Greeter.address
+'0x341b96c329d820fe4d5f3e25de14a87bf1ac66d1'
+truffle(development)> var contract = Greeter.at(Greeter.address)
+undefined
+truffle(development)> contract
+TruffleContract {
+  constructor: 
+   { [Function: TruffleContract]
+     _static_methods: 
+      { setProvider: [Function: setProvider],
+        new: [Function: new],
+        at: [Function: at],
+        deployed: [Function: deployed],
+        defaults: [Function: defaults],
+        hasNetwork: [Function: hasNetwork],
+        isDeployed: [Function: isDeployed],
+        detectNetwork: [Function: detectNetwork],
+        setNetwork: [Function: setNetwork],
+        resetAddress: [Function: resetAddress],
+        link: [Function: link],
+        clone: [Function: clone],
+        addProp: [Function: addProp],
+        toJSON: [Function: toJSON] },
+     _properties: 
+      { contract_name: [Object],
+        abi: [Object],
+        network: [Function: network],
+        networks: [Function: networks],
+        address: [Object],
+        links: [Function: links],
+        events: [Function: events],
+        binary: [Function: binary],
+        unlinked_binary: [Object],
+        schema_version: [Function: schema_version],
+        updated_at: [Function: updated_at] },
+     _property_values: {},
+     _json: 
+      { contract_name: 'Greeter',
+        default_network: undefined,
+        abi: [Object],
+        unlinked_binary: '0x6060604052341561000f57600080fd5b5b6102c58061001f6000396000f300606060405263ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663cfae32178114610048578063faf27bca146100d3575b600080fd5b341561005357600080fd5b61005b610126565b60405160208082528190810183818151815260200191508051906020019080838360005b838110156100985780820151818401525b60200161007f565b50505050905090810190601f1680156100c55780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34156100de57600080fd5b61012460046024813581810190830135806020601f820181900481020160405190810160405281815292919060208401838380828437509496506101cf95505050505050565b005b61012e6101e7565b60008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156101c45780601f10610199576101008083540402835291602001916101c4565b820191906000526020600020905b8154815290600101906020018083116101a757829003601f168201915b505050505090505b90565b60008180516101e29291602001906101f9565b505b50565b60206040519081016040526000815290565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061023a57805160ff1916838001178555610267565b82800160010185558215610267579182015b8281111561026757825182559160200191906001019061024c565b5b50610274929150610278565b5090565b6101cc91905b80821115610274576000815560010161027e565b5090565b905600a165627a7a72305820ce46d88ea7f36bed46535da7bf987329a89c7d087f9b47c0b68f387601b69c7b0029',
+        networks: [Object],
+        schema_version: '0.0.5',
+        updated_at: 1505973900827 },
+     setProvider: [Function: bound setProvider],
+     new: [Function: bound new],
+     at: [Function: bound at],
+     deployed: [Function: bound deployed],
+     defaults: [Function: bound defaults],
+     hasNetwork: [Function: bound hasNetwork],
+     isDeployed: [Function: bound isDeployed],
+     detectNetwork: [Function: bound detectNetwork],
+     setNetwork: [Function: bound setNetwork],
+     resetAddress: [Function: bound resetAddress],
+     link: [Function: bound link],
+     clone: [Function: bound clone],
+     addProp: [Function: bound addProp],
+     toJSON: [Function: bound toJSON],
+     web3: 
+      Web3 {
+        _requestManager: [Object],
+        currentProvider: [Object],
+        eth: [Object],
+        db: [Object],
+        shh: [Object],
+        net: [Object],
+        personal: [Object],
+        bzz: [Object],
+        settings: [Object],
+        version: [Object],
+        providers: [Object],
+        _extend: [Object] },
+     class_defaults: 
+      { from: '0xc52938504f582aeb59323f05134531eeab9e3964',
+        gas: 4712388,
+        gasPrice: 100000000000 },
+     currentProvider: 
+      HttpProvider {
+        host: 'http://localhost:8545',
+        timeout: 0,
+        send: [Function],
+        sendAsync: [Function],
+        _alreadyWrapped: true },
+     network_id: '1505973539692' },
+  abi: 
+   [ { constant: true,
+       inputs: [],
+       name: 'greet',
+       outputs: [Object],
+       payable: false,
+       type: 'function' },
+     { constant: false,
+       inputs: [Object],
+       name: 'greeter',
+       outputs: [],
+       payable: false,
+       type: 'function' } ],
+  contract: 
+   Contract {
+     _eth: 
+      Eth {
+        _requestManager: [Object],
+        getBalance: [Object],
+        getStorageAt: [Object],
+        getCode: [Object],
+        getBlock: [Object],
+        getUncle: [Object],
+        getCompilers: [Object],
+        getBlockTransactionCount: [Object],
+        getBlockUncleCount: [Object],
+        getTransaction: [Object],
+        getTransactionFromBlock: [Object],
+        getTransactionReceipt: [Object],
+        getTransactionCount: [Object],
+        call: [Object],
+        estimateGas: [Object],
+        sendRawTransaction: [Object],
+        signTransaction: [Object],
+        sendTransaction: [Object],
+        sign: [Object],
+        compile: [Object],
+        submitWork: [Object],
+        getWork: [Object],
+        coinbase: [Getter],
+        getCoinbase: [Object],
+        mining: [Getter],
+        getMining: [Object],
+        hashrate: [Getter],
+        getHashrate: [Object],
+        syncing: [Getter],
+        getSyncing: [Object],
+        gasPrice: [Getter],
+        getGasPrice: [Object],
+        accounts: [Getter],
+        getAccounts: [Object],
+        blockNumber: [Getter],
+        getBlockNumber: [Object],
+        protocolVersion: [Getter],
+        getProtocolVersion: [Object],
+        iban: [Object],
+        sendIBANTransaction: [Function: bound transfer] },
+     transactionHash: null,
+     address: '0x341b96c329d820fe4d5f3e25de14a87bf1ac66d1',
+     abi: [ [Object], [Object] ],
+     greet: 
+      { [Function: bound ]
+        request: [Function: bound ],
+        call: [Function: bound ],
+        sendTransaction: [Function: bound ],
+        estimateGas: [Function: bound ],
+        getData: [Function: bound ],
+        '': [Circular] },
+     greeter: 
+      { [Function: bound ]
+        request: [Function: bound ],
+        call: [Function: bound ],
+        sendTransaction: [Function: bound ],
+        estimateGas: [Function: bound ],
+        getData: [Function: bound ],
+        string: [Circular] },
+     allEvents: [Function: bound ] },
+  greet: 
+   { [Function]
+     call: [Function],
+     sendTransaction: [Function],
+     request: [Function: bound ],
+     estimateGas: [Function] },
+  greeter: 
+   { [Function]
+     call: [Function],
+     sendTransaction: [Function],
+     request: [Function: bound ],
+     estimateGas: [Function] },
+  sendTransaction: [Function],
+  send: [Function],
+  allEvents: [Function: bound ],
+  address: '0x341b96c329d820fe4d5f3e25de14a87bf1ac66d1',
+  transactionHash: null }
+truffle(development)> contract.greeter("Hello world!")
+{ tx: '0x36e707f01741faca4792657403797beda2c5940b6ce24cd0f208f79b38868dc5',
+  receipt: 
+   { transactionHash: '0x36e707f01741faca4792657403797beda2c5940b6ce24cd0f208f79b38868dc5',
+     transactionIndex: 0,
+     blockHash: '0x7456b13535a7d1631b759e5f8cb7e740a12d7778b91aa724111ed6e3208682ed',
+     blockNumber: 5,
+     gasUsed: 43387,
+     cumulativeGasUsed: 43387,
+     contractAddress: null,
+     logs: [] },
+  logs: [] }
+truffle(development)> contract.greet()
+'Hello world!'
+truffle(development)> 

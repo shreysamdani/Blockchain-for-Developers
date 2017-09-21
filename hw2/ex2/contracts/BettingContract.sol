@@ -26,14 +26,12 @@ contract BettingContract {
 
 	/* Uh Oh, what are these? */
 	modifier OwnerOnly() {
-		if (msg.sender != owner) {
-			throw;
-		}
+		require (msg.sender == owner);
+			_;
 	}
 	modifier OracleOnly() {
-		if (msg.sender != oracle) {
-			throw;
-		}
+		require (msg.sender == oracle);
+			_;
 	}
 
 	/* Constructor function, where owner and outcomes are set */
@@ -50,40 +48,57 @@ contract BettingContract {
 
 	/* Gamblers place their bets, preferably after calling checkOutcomes */
 	function makeBet(uint _outcome) payable returns (bool) {
-		if (msg.sender != owner && msg.sender != oracle) {
-
-			if (!gamblerA) {
-				gamblerA = msg.sender;
-			} else if (!gamblerB) {
-				gamblerB = msg.sender;
-			} else {
-				return false;
-			}
-
-			if (bets[msg.sender]) {
-				bets[msg.sender] = Bet(_outcome, msg.value, true);
-				BetMade();
-				return true;
-			}
+		assert (msg.sender != owner && msg.sender != oracle);
+		
+		if (gamblerA == 0) {
+			gamblerA = msg.sender;
+			
+		} else if (gamblerB == 0) {
+			gamblerB = msg.sender;
+			
+		} else {
 			return false;
+		}
+
+		if (!bets[msg.sender].initialized) {
+			bets[msg.sender] = Bet(_outcome, msg.value, true);
+			BetMade(msg.sender);
+			return true;
 		}
 		return false;
 	}
 
 	/* The oracle chooses which outcome wins */
 	function makeDecision(uint _outcome) OracleOnly() {
+		assert(bets[gamblerA].initialized);
+		assert(bets[gamblerB].initialized);
+		uint ABet = bets[gamblerA].outcome;
+		uint BBet = bets[gamblerA].outcome;
 		
-		ABet = bets[gamblerA].outcome;
-		BBet = bets[gamblerA].outcome;
 		if (ABet == _outcome && BBet == _outcome) {
-
+		    gamblerA.transfer(bets[gamblerA].amount);
+		    gamblerB.transfer(bets[gamblerB].amount);
+		    
+		} else if (ABet == _outcome) {
+		    winnings[gamblerA] += (bets[gamblerA].amount + bets[gamblerB].amount);
+		    
+		} else if (BBet == _outcome) {
+		    winnings[gamblerB] += (bets[gamblerA].amount + bets[gamblerB].amount);
+		    
+		} else {
+		    oracle.transfer(bets[gamblerA].amount + bets[gamblerB].amount);
 		}
+		BetClosed();
 
 
 	}
 
 	/* Allow anyone to withdraw their winnings safely (if they have enough) */
 	function withdraw(uint withdrawAmount) returns (uint remainingBal) {
+	    assert(winnings[msg.sender] >= withdrawAmount);
+	    msg.sender.transfer(withdrawAmount);
+	    winnings[msg.sender] -= withdrawAmount;
+	    return winnings[msg.sender];
 	}
 	
 	/* Allow anyone to check the outcomes they can bet on */

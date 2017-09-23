@@ -1,0 +1,65 @@
+{
+  "contractName": "TestBettingContract",
+  "abi": [],
+  "bytecode": "0x60606040523415600e57600080fd5b5b603680601c6000396000f30060606040525b600080fd00a165627a7a723058207a09f61ec72ee57b144b2684f94113bafd292ee16fd7c1ff883af33f7d73aed30029",
+  "deployedBytecode": "0x60606040525b600080fd00a165627a7a723058207a09f61ec72ee57b144b2684f94113bafd292ee16fd7c1ff883af33f7d73aed30029",
+  "sourceMap": "27:34:0:-;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "27:34:0:-;;;;;;",
+  "source": "pragma solidity ^0.4.15;\n\n\ncontract TestBettingContract {\n\n\n}\n",
+  "sourcePath": "/Users/shreysamdani/GoogleDrive/fall 2017/BlockchainDevDecal/hw2/ex2/contracts/TestBetting.sol",
+  "ast": {
+    "attributes": {
+      "absolutePath": "/Users/shreysamdani/GoogleDrive/fall 2017/BlockchainDevDecal/hw2/ex2/contracts/TestBetting.sol",
+      "exportedSymbols": {
+        "TestBettingContract": [
+          2
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.4",
+            ".15"
+          ]
+        },
+        "id": 1,
+        "name": "PragmaDirective",
+        "src": "0:24:0"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            2
+          ],
+          "name": "TestBettingContract",
+          "nodes": [
+            null
+          ],
+          "scope": 3
+        },
+        "id": 2,
+        "name": "ContractDefinition",
+        "src": "27:34:0"
+      }
+    ],
+    "id": 3,
+    "name": "SourceUnit",
+    "src": "0:62:0"
+  },
+  "networks": {},
+  "schemaVersion": "1.0.0",
+  "updatedAt": "2017-09-21T23:44:31.889Z"
+}

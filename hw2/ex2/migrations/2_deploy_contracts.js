@@ -1,4 +1,4 @@
-var BettingContract = artifacts.require("./BettingContract.sol");
+var BettingContract = artifacts.require("BettingContract");
 
 module.exports = function(deployer) {
 	var testOutcomes = [1, 2, 3];

@@ -48,7 +48,7 @@ contract BettingContract {
 
 	/* Gamblers place their bets, preferably after calling checkOutcomes */
 	function makeBet(uint _outcome) payable returns (bool) {
-		assert (msg.sender != owner && msg.sender != oracle);
+		require (msg.sender != owner && msg.sender != oracle);
 		
 		if (gamblerA == 0) {
 			gamblerA = msg.sender;
@@ -70,14 +70,13 @@ contract BettingContract {
 
 	/* The oracle chooses which outcome wins */
 	function makeDecision(uint _outcome) OracleOnly() {
-		assert(bets[gamblerA].initialized);
-		assert(bets[gamblerB].initialized);
+		require(bets[gamblerA].initialized);
+		require(bets[gamblerB].initialized);
 		uint ABet = bets[gamblerA].outcome;
-		uint BBet = bets[gamblerA].outcome;
+		uint BBet = bets[gamblerB].outcome;
 		
 		if (ABet == _outcome && BBet == _outcome) {
-		    gamblerA.transfer(bets[gamblerA].amount);
-		    gamblerB.transfer(bets[gamblerB].amount);
+		    revert();
 		    
 		} else if (ABet == _outcome) {
 		    winnings[gamblerA] += (bets[gamblerA].amount + bets[gamblerB].amount);
@@ -89,13 +88,14 @@ contract BettingContract {
 		    oracle.transfer(bets[gamblerA].amount + bets[gamblerB].amount);
 		}
 		BetClosed();
+		contractReset();
 
 
 	}
 
 	/* Allow anyone to withdraw their winnings safely (if they have enough) */
 	function withdraw(uint withdrawAmount) returns (uint remainingBal) {
-	    assert(winnings[msg.sender] >= withdrawAmount);
+	    require(winnings[msg.sender] >= withdrawAmount);
 	    msg.sender.transfer(withdrawAmount);
 	    winnings[msg.sender] -= withdrawAmount;
 	    return winnings[msg.sender];

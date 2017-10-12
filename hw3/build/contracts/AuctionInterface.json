@@ -1,0 +1,408 @@
+{
+  "contractName": "AuctionInterface",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getHighestBidder",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "bid",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": true,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getHighestBid",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.4.15;\n\n/** @title AuctionInterface */\ncontract AuctionInterface {\n\taddress highestBidder;\n\tuint highestBid;\n\tfunction bid() payable external returns (bool);\n\tfunction getHighestBidder() constant returns (address) {\n\t\treturn highestBidder;\n\t}\n\tfunction getHighestBid() constant returns (uint) {\n\t\treturn highestBid;\n\t}\n}\n",
+  "sourcePath": "/Users/shreysamdani/GoogleDrive/fall 2017/BlockchainDevDecal/hw3/contracts/AuctionInterface.sol",
+  "ast": {
+    "attributes": {
+      "absolutePath": "/Users/shreysamdani/GoogleDrive/fall 2017/BlockchainDevDecal/hw3/contracts/AuctionInterface.sol",
+      "exportedSymbols": {
+        "AuctionInterface": [
+          27
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.4",
+            ".15"
+          ]
+        },
+        "id": 1,
+        "name": "PragmaDirective",
+        "src": "0:24:0"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": "@title AuctionInterface ",
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            27
+          ],
+          "name": "AuctionInterface",
+          "scope": 28
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "name": "highestBidder",
+              "scope": 27,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "address",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "address",
+                  "type": "address"
+                },
+                "id": 2,
+                "name": "ElementaryTypeName",
+                "src": "86:7:0"
+              }
+            ],
+            "id": 3,
+            "name": "VariableDeclaration",
+            "src": "86:21:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "highestBid",
+              "scope": 27,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint256",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint",
+                  "type": "uint256"
+                },
+                "id": 4,
+                "name": "ElementaryTypeName",
+                "src": "110:4:0"
+              }
+            ],
+            "id": 5,
+            "name": "VariableDeclaration",
+            "src": "110:15:0"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "constant": false,
+              "implemented": false,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "bid",
+              "payable": true,
+              "scope": 27,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 6,
+                "name": "ParameterList",
+                "src": "140:2:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 10,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 7,
+                        "name": "ElementaryTypeName",
+                        "src": "169:4:0"
+                      }
+                    ],
+                    "id": 8,
+                    "name": "VariableDeclaration",
+                    "src": "169:4:0"
+                  }
+                ],
+                "id": 9,
+                "name": "ParameterList",
+                "src": "168:6:0"
+              }
+            ],
+            "id": 10,
+            "name": "FunctionDefinition",
+            "src": "128:47:0"
+          },
+          {
+            "attributes": {
+              "constant": true,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "getHighestBidder",
+              "payable": false,
+              "scope": 27,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 11,
+                "name": "ParameterList",
+                "src": "202:2:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 18,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 12,
+                        "name": "ElementaryTypeName",
+                        "src": "223:7:0"
+                      }
+                    ],
+                    "id": 13,
+                    "name": "VariableDeclaration",
+                    "src": "223:7:0"
+                  }
+                ],
+                "id": 14,
+                "name": "ParameterList",
+                "src": "222:9:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 14
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "overloadedDeclarations": [
+                            null
+                          ],
+                          "referencedDeclaration": 3,
+                          "type": "address",
+                          "value": "highestBidder"
+                        },
+                        "id": 15,
+                        "name": "Identifier",
+                        "src": "243:13:0"
+                      }
+                    ],
+                    "id": 16,
+                    "name": "Return",
+                    "src": "236:20:0"
+                  }
+                ],
+                "id": 17,
+                "name": "Block",
+                "src": "232:28:0"
+              }
+            ],
+            "id": 18,
+            "name": "FunctionDefinition",
+            "src": "177:83:0"
+          },
+          {
+            "attributes": {
+              "constant": true,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "getHighestBid",
+              "payable": false,
+              "scope": 27,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 19,
+                "name": "ParameterList",
+                "src": "284:2:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 26,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 20,
+                        "name": "ElementaryTypeName",
+                        "src": "305:4:0"
+                      }
+                    ],
+                    "id": 21,
+                    "name": "VariableDeclaration",
+                    "src": "305:4:0"
+                  }
+                ],
+                "id": 22,
+                "name": "ParameterList",
+                "src": "304:6:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 22
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "overloadedDeclarations": [
+                            null
+                          ],
+                          "referencedDeclaration": 5,
+                          "type": "uint256",
+                          "value": "highestBid"
+                        },
+                        "id": 23,
+                        "name": "Identifier",
+                        "src": "322:10:0"
+                      }
+                    ],
+                    "id": 24,
+                    "name": "Return",
+                    "src": "315:17:0"
+                  }
+                ],
+                "id": 25,
+                "name": "Block",
+                "src": "311:25:0"
+              }
+            ],
+            "id": 26,
+            "name": "FunctionDefinition",
+            "src": "262:74:0"
+          }
+        ],
+        "id": 27,
+        "name": "ContractDefinition",
+        "src": "57:281:0"
+      }
+    ],
+    "id": 28,
+    "name": "SourceUnit",
+    "src": "0:339:0"
+  },
+  "networks": {},
+  "schemaVersion": "1.0.0",
+  "updatedAt": "2017-10-12T23:51:49.396Z"
+}
